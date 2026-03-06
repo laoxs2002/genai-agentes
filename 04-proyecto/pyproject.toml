@@ -1,0 +1,20 @@
+[project]
+name = "soporte-api"
+version = "0.1.0"
+description = "API REST de soporte al cliente con agentes LangChain, RAG y arquitectura multiagente"
+authors = [
+    { name = "Alan Sastre" }
+]
+readme = "README.md"
+requires-python = ">=3.13.5"
+license = { text = "MIT" }
+keywords = ["langchain", "fastapi", "agents", "rag", "multiagent", "support"]
+dependencies = [
+    "fastapi[standard]>=0.133.1",
+    "langchain>=1.2.10",
+    "langchain-community>=0.4.1",
+    "langchain-openai>=1.1.10",
+    "langchain-postgres>=0.0.17",
+    "langchain-tavily>=0.2.17",
+    "langgraph-checkpoint-postgres>=3.0.4",
+]

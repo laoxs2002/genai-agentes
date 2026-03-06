@@ -1,0 +1,10 @@
+langchain
+langchain-openai
+langchain-ollama
+langchain-tavily
+langsmith
+python-dotenv
+
+# memory short term:
+langgraph-checkpoint-sqlite
+langgraph-checkpoint-postgres

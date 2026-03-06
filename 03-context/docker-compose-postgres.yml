@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  postgres:
+    container_name: postgres
+    image: postgres:18.1
+    ports:
+      - "5434:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres

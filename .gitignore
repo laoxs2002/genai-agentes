@@ -1,0 +1,102 @@
+# Entornos virtuales de Python
+.venv/
+venv/
+ENV/
+env/
+.env/
+
+# Variables de entorno (contienen secretos)
+.env
+.env.local
+.env.*.local
+
+# Archivos compilados de Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+
+# Distribución y empaquetado
+build/
+dist/
+wheels/
+*.egg
+*.egg-info/
+.eggs/
+MANIFEST
+
+# Instaladores
+*.msi
+*.exe
+*.dmg
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# IDEs y editores
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# Sistema operativo
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Logs y bases de datos locales
+*.log
+*.sqlite
+*.sqlite3
+*.db
+checkpoints.sqlite
+
+# Caché y temporales
+.cache/
+*.cache
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# Documentación generada
+docs/_build/
+site/
+
+# Archivos de pruebas
+.hypothesis/
+*.cover
+coverage.xml
+*.coveragerc
+
+# Herramientas de calidad de código
+.pylint.d/
+
+# uv
+.python-version.bak
+uv.lock
+
+# Docker
+*.pid
+
+# Credenciales y secretos
+credentials.json
+*.pem
+*.key
+secrets/
